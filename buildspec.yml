@@ -1,0 +1,15 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - yarn
+  build:
+   commands:
+      - yarn build
+# Artifacts will specify what files will be uploaded to s3
+# This will include all files within the "build" folder
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: no
+  base-directory: build
